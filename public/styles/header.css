@@ -1,0 +1,34 @@
+
+/* Profile image and Name */
+/* .profile-info{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+} */
+
+#profile-header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 520px;
+  width: 100%;
+  background-color: mediumpurple;
+  font-weight: 300;
+  background-image: url("../images/bgworn-dots.png");
+}
+
+.profile-user-image {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-top: 15%;
+  height: 150px;
+}
+/* 
+.profile-user-name {
+  font-family: Bungee, sans-serif;
+  font-weight: 100;
+} */
