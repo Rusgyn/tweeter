@@ -1,18 +1,17 @@
 nav {
   display: flex;
-  flex-direction: row;
   justify-content: space-between;
   color: #FFFFFF;
   background-color: #4056A1;
-  width: 100vw;
-  font-size: 24px;
+  position: fixed; /* Setting the nav bar to fixed position */
+  width: 100vw; /* Full width */
   height: 120px;
   padding-left: 1.5em;
   padding-right: 1.5em;
 }
 
 .logo {
-  font-family: "Bungee", sans-serif;
+  padding-top: 1em;
   font-size: 42px;
 }
 
@@ -26,7 +25,7 @@ nav {
 
 .fa-solid {
   font-weight: 900;
-  color: #FF0000;
+  color: #eb0a0a;
 }
 
 .tab {
