@@ -3,18 +3,24 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 520px;
+  height: 400px;
   width: 100%;
   background-color: mediumpurple;
-  font-weight: 300;
   background-image: url("../images/bgworn-dots.png");
 }
 
+img {
+  border: 0px solid #ddd;
+  padding: 5px;
+  width: 210px;
+}
+
 .profile-user-image {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  margin-top: 15%;
-  height: 150px;
+  margin-top: 150px;
+  height: 180px;
+  align-self: auto;
+}
+
+.profile-user-name {
+  align-self: center;
 }
