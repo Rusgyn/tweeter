@@ -15,9 +15,8 @@
 
     <!-- App CSS -->
     <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
-
-    <!-- App CSS styles -->
     <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/header.css" type="text/css" />
 
     <!-- External JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -30,14 +29,25 @@
 
   <body>
     <!-- Top nav bar (fixed) -->
-    <nav >
-      <span class="logo" style="padding-top: 1em">tweeter</span>
+    <nav>
+      <span class="logo" style="font-family: Bungee, sans-serif">tweeter</span>
       <div class="write-new-tweet">
         <p><b>Write </b> a new tweet<br>
         <i class="tab fa-solid fa-angles-down"></i></p>
       </div>
-   
     </nav>
+    <!-- Avatar and user's full name -->
+    <header id="profile-header">
+      
+      <div class="profile-user-image">
+          <img src="/images/profile-hex.png"> 
+      </div>
+      <br>
+      <div class="profile-user-name">
+          <h2><b>Amy</b> Mansell</h2>
+      </div>
+   
+    </header>
 
     <!-- Page-specific (main) content here -->
     <main class="container"></main>
