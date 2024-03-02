@@ -28,10 +28,9 @@ body {
  */
 
  .container {
+  background-color: inherit; /*inherit the bg color of its parent (body)*/
+  margin: 0 auto; /*auto adjust the left and right margins*/
   display: flex;
   flex-wrap: wrap;
-  background-color: #f4f1ec;
   width: 90%;
-  margin-left: 5%;
-  margin-right: 5%;
  }
