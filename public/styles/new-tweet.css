@@ -1,0 +1,41 @@
+.new-tweet {
+  background-color: #f4f1ec;
+  width: 100vw;
+}
+
+/* Form styling - to compose tweet */
+.tweet-form {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: flex-start;
+  background-color: #f4f1ec;
+}
+
+/* Textarea field styling */
+#tweet-text {
+  border-color: Transparent;  
+  outline: none;
+  background-color: #f4f1ec;
+  border-bottom-color: black;
+  border-bottom-style: solid;
+  border-bottom-width: medium;
+}
+
+/* Styling for tweet submit button and character counter */
+.tweet-btn-and-counter {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 0.5em;
+}
+
+/* Styling for tweet submit button only */
+.tweet-btn {
+  color: #FFFFFF;
+  background-color: #4056A1;
+  font-family: "Bungee", sans-serif;
+  font-size: medium;
+  padding: 0.5em;
+  border: 0;
+}
