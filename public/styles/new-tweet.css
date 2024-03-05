@@ -4,7 +4,7 @@
 }
 
 /* Form styling - to compose tweet */
-.tweet-form {
+#tweet-form {
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
@@ -20,6 +20,8 @@
   border-bottom-color: black;
   border-bottom-style: solid;
   border-bottom-width: medium;
+  padding: 10px;
+  margin-top: 10px;
 }
 
 /* Styling for tweet submit button and character counter */
@@ -37,5 +39,12 @@
   font-family: "Bungee", sans-serif;
   font-size: medium;
   padding: 0.5em;
+  width: 7%;
   border: 0;
+}
+
+.tweet-btn:hover {
+  background-color: #4056A1;
+  color: aqua;
+  box-shadow: 0 12px 20px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
 }

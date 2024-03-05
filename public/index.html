@@ -52,14 +52,23 @@
     <!-- Page-specific (main) content here -->
     <main class="container">
       
+      <!-- 
+
+<form name="myForm" onsubmit="return validateForm()" method="post">
+  Name: <input type="text" name="fname">
+  <input type="submit" value="Submit">
+
+       -->
+
+
       <section class="new-tweet">
         <h2>Compose Tweet</h2>
-        <form class="tweet-form" action="/tweets" method="POST">
+        <form id="tweet-form" action="/tweets" method="POST">
           <label for="tweet-text">What are you humming about?</label>
-          <textarea name="text" id="tweet-text"></textarea>
+          <textarea type="text" name="text" id="tweet-text" required maxlength="140"></textarea>
           <!-- tweet submit button and character counter -->
           <div class="tweet-btn-and-counter">
-            <button class="tweet-btn"  type="submit">Tweet</button>
+            <button class="tweet-btn" type="submit">Tweet</button>
             <output name="counter" class="counter" for="tweet-text">140</output>
           </div>
         </form>
