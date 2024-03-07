@@ -1,5 +1,5 @@
 .new-tweet {
-  background-color: #f4f1ec;
+  background-color: inherit; 
   width: 100vw;
 }
 
@@ -10,10 +10,12 @@
   flex-direction: column;
   justify-content: flex-start;
   background-color: #f4f1ec;
+  margin-left: 0.5%;
+  margin-right: 0.5%;
 }
 
 /* Textarea field styling */
-#tweet-text {
+#tweet-textarea {
   border-color: Transparent;  
   outline: none;
   background-color: #f4f1ec;
@@ -39,7 +41,7 @@
   font-family: "Bungee", sans-serif;
   font-size: medium;
   padding: 0.5em;
-  width: 7%;
+  width: 10%;
   border: 0;
 }
 
