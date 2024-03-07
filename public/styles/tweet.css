@@ -1,0 +1,89 @@
+/* Tweet container styling */
+
+article {
+  margin-top: 2em;
+  background-color: inherit;
+  border-color: black;
+  border-style: solid;
+  width: 100%;
+}
+
+header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: 0.5em auto;
+}
+
+.tweeter-user-icon {
+  width: 50px;
+}
+
+.tweeter-userName {
+  display: flex;
+  flex-wrap: nowrap;
+  margin: 2px 1em 0 auto;
+}
+
+.tweet-textarea-container {
+  border-color: Transparent;  
+  outline: none;
+  background-color: inherit;
+  border-bottom-color: black;
+  border-bottom-style: solid;
+  border-bottom-width: medium;
+  width: 99%;
+  margin-left: 0.5%;
+  margin-right: 0.5%;
+  padding: 10px;
+  margin-top: 10px;
+}
+
+.footer-left {
+  float: left;
+  height: 25px;
+  margin: 0px 0px 10px 40px;
+  color: #000;
+  text-align: left;
+  padding: 0px 0px 0px 0px;
+  width: 180px;
+}
+
+.footer-right {
+  float: right;
+  height: 25px;
+  margin: 0px 40px 10px 0px;
+  color: #000;
+  text-align: right;
+  padding: 0px 0px 0px 50px;
+  width: 180px;
+}
+
+i {
+  padding: 5px;
+}
+
+.fa-flag {
+  color: #4056A1;
+}
+
+.fa-flag:hover {
+  color: darkgoldenrod;
+}
+
+.fa-retweet {
+  color: #4056A1;
+}
+
+.fa-retweet:hover {
+  color: darkmagenta;
+}
+
+.fa-heart {
+  color: #4056A1;
+  margin-right: 0.5%;
+}
+
+.fa-heart:hover {
+  color: crimson;
+}
