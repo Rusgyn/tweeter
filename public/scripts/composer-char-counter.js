@@ -1,18 +1,18 @@
 $(document).ready(function() {
-  // --- our code goes here ---
-  const existingCount = $('.counter').html();
+  const maxCount = $('.counter').html();
 
   $('#tweet-text').on('input', function() {
     let tweet = this.value;
     let counter = $('.counter');
-    let newCount = parseInt(existingCount) - tweet.length;
+    let count = parseInt(maxCount) - tweet.length;
 
-    if (newCount < 0) {
+    if (count < 0) {
       counter.addClass('invalid');
+    } else {
+      counter.removeClass('invalid');
     }
 
-    counter.html(newCount);
-  }) 
+    counter.html(count);
+  })
 
-  
 });
