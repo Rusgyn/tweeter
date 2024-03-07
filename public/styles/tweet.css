@@ -1,6 +1,7 @@
 /* Tweet container styling */
 
-article {
+/* article styling */
+.tweets-container {
   margin-top: 2em;
   background-color: inherit;
   border-color: black;
@@ -8,7 +9,12 @@ article {
   width: 100%;
 }
 
-header {
+.tweets-container:hover {
+  box-shadow: 12px 12px 2px 1px rgba(0, 0, 255, .2);
+}
+
+/* header content styling */
+.tweets-container-header {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -25,6 +31,7 @@ header {
   margin: 2px 1em 0 auto;
 }
 
+/* section content styling */
 .tweet-textarea-container {
   border-color: Transparent;  
   outline: none;
@@ -39,27 +46,31 @@ header {
   margin-top: 10px;
 }
 
+/* Footer content styling */
+.tweets-container-footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
 .footer-left {
-  float: left;
   height: 25px;
   margin: 0px 0px 10px 40px;
-  color: #000;
   text-align: left;
   padding: 0px 0px 0px 0px;
   width: 180px;
 }
 
 .footer-right {
-  float: right;
   height: 25px;
   margin: 0px 40px 10px 0px;
-  color: #000;
   text-align: right;
   padding: 0px 0px 0px 50px;
   width: 180px;
 }
 
-i {
+/* Footer right side icons */
+.fa-solid {
   padding: 5px;
 }
 
