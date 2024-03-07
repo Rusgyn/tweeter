@@ -28,9 +28,12 @@ body {
  */
 
 .container {
-  background-color: inherit; /*inherit the bg color of its parent (body)*/
-  margin: 0 auto; /*auto adjust the left and right margins*/
   display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
   flex-wrap: wrap;
   width: 90%;
+  background-color: inherit; /*inherit the bg color of its parent (body)*/
+  margin: 0 auto; /* auto adjust the left and right margins */
 }
