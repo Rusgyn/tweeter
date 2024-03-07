@@ -18,7 +18,7 @@
 #tweet-textarea {
   border-color: Transparent;  
   outline: none;
-  background-color: #f4f1ec;
+  background-color: inherit;
   border-bottom-color: black;
   border-bottom-style: solid;
   border-bottom-width: medium;
