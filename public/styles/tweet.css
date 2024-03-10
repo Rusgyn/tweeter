@@ -2,19 +2,22 @@
 
 /* article styling */
 .tweets-container {
+  width: 100%;
+}
+
+.tweet-container {
   margin-top: 2em;
   background-color: inherit;
   border-color: black;
   border-style: solid;
-  width: 100%;
 }
 
-.tweets-container:hover {
+.tweet-container:hover {
   box-shadow: 12px 12px 2px 1px rgba(0, 0, 255, .2);
 }
 
 /* header content styling */
-.tweets-container-header {
+.tweet-container-header {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -47,7 +50,7 @@
 }
 
 /* Footer content styling */
-.tweets-container-footer {
+.tweet-container-footer {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
