@@ -70,7 +70,8 @@ $(function() {
 
   // Click (tweet) form submit handler.
   $("#tweet-form").on( "submit", function( event ) {
-    alert( "Handler for `submit` called." );
     event.preventDefault();
-  });
+    let $data = ($( this ).serialize());
+    $.post("/tweets", $data);
+  }); 
 });
