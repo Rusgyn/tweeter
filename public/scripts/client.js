@@ -27,7 +27,7 @@ $(function() {
   
         <footer class="tweet-container-footer">
           <div class="footer-left">
-            ${tweet.created_at}
+            ${timeago.format(tweet.created_at)}
           </div>
           <div class="footer-right">
             <i class="fa-solid fa-flag"></i>
@@ -57,5 +57,5 @@ $(function() {
   }
 
   loadTweets();
-  
+
 });
