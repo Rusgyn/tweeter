@@ -1,7 +1,7 @@
 $(document).ready(function() {
   const maxCount = $('.counter').html();
 
-  $('#tweet-text').on('input', function() {
+  $('#tweet-textarea').on('input', function() {
     let tweet = this.value;
     let counter = $('.counter');
     let count = parseInt(maxCount) - tweet.length;
