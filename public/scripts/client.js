@@ -32,7 +32,7 @@ const data = [
 const renderTweets = function(tweets) {
   tweets.forEach(function(tweet) {
     let $html = createTweetElement(tweet);
-    $('.tweets-container').append($html);
+    $('.tweets-container').prepend($html);
   })
 }
 
