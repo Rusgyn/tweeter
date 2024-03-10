@@ -45,10 +45,14 @@ $(function() {
   $("#tweet-form").on("submit", function(event) {
     event.preventDefault();
     let $data = ($(this).serialize());
-    $.post("/tweets", $data).done(() => {
-      $('#tweet-textarea').val('')
-      loadTweets();
-    })
+    if ($data.length > 140) {
+      alert("Your tweet content is too long");
+    } else {
+      $.post("/tweets", $data).done(() => {
+        $('#tweet-textarea').val('')
+        loadTweets();
+      })
+    }
   }); 
 
   const loadTweets = () => {
