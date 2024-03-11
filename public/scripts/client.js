@@ -71,9 +71,13 @@ $(function() {
   }
 
   const loadTweets = () => {
+   
     $.get('/tweets')
-      .done((tweetData) => renderTweets(tweetData))
-  }
+      .done((tweetData) => {
+        $('#tweet-textarea').empty();
+        renderTweets(tweetData)
+      }
+    )}
 
   loadTweets();
 
