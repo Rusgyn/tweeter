@@ -40,20 +40,35 @@ $(function() {
   
     return $(html);
   };
-  
+ 
+
   // Click (tweet) form submit handler.
   $("#tweet-form").on("submit", function(event) {
     event.preventDefault();
-    let $data = ($(this).serialize());
-    if ($data.length > 140) {
-      alert("Your tweet content is too long");
+
+    const $textArea = $('#tweet-textarea');
+    const tweetText = $textArea.val();
+    const error = validateTweet(tweetText);
+
+    if (error) {
+      alert(error)
     } else {
-      $.post("/tweets", $data).done(() => {
-        $('#tweet-textarea').val('')
+      $.post("/tweets", $(this).serialize()).done(() => {
+        $textArea.val('')
         loadTweets();
       })
     }
   }); 
+
+  const validateTweet = function(tweetText) {
+    if (tweetText.length === 0) {
+      return "Your tweet is empty";
+    }
+
+    if (tweetText.length > 140) {
+      return "Your tweet content is too long";
+    }
+  }
 
   const loadTweets = () => {
     $.get('/tweets')
