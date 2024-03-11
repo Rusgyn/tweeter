@@ -13,16 +13,26 @@ $(function() {
   }
   
   const createTweetElement = function(tweet) {
+
+    //Cross-site scripting, preventing xss.
+    const escape = function (strTweet) {
+      let div = document.createElement("p");
+      div.appendChild(document.createTextNode(strTweet));
+      return div.innerHTML;
+    };
+
+    const safeHTML = `${escape(tweet.content.text)}`;
+
     const html = `
       <article class="tweet-container">
         <header class="tweet-container-header">
           <img class="tweeter-user-icon" src="${tweet.user.avatars}">
-          ${tweet.user.name};
+          ${tweet.user.name}
           <div class="tweeter-userName">${tweet.user.handle}</div>
         </header>
   
         <section>
-          <p class="tweet-textarea-container">${tweet.content.text}</p>
+          <p class="tweet-textarea-container"> ${safeHTML} </p>
         </section>
   
         <footer class="tweet-container-footer">
@@ -45,16 +55,18 @@ $(function() {
   // Click (tweet) form submit handler.
   $("#tweet-form").on("submit", function(event) {
     event.preventDefault();
-
+    
     const $textArea = $('#tweet-textarea');
-    const tweetText = $textArea.val();
+    const tweetText = $textArea.val().trim();
     const error = validateTweet(tweetText);
 
     if (error) {
       alert(error)
     } else {
+      
       $.post("/tweets", $(this).serialize()).done(() => {
-        $textArea.val('')
+        $('.tweet-btn').addClass('tweet-btn');
+        $textArea.val('');
         loadTweets();
       })
     }
