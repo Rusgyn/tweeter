@@ -67,6 +67,7 @@ $(function() {
         $('#tweet-validation-error').hide( 7000 );
       });
     } else {
+      $('#tweet-validation-error').hide()
       $.post("/tweets", $(this).serialize()).done(() => {
         $textArea.val('');
         loadTweets();
