@@ -48,11 +48,12 @@
           <h2>Amy Mansell</h2>
       </div>
     </header>
-
     <!-- Page-specific (main) content here -->
     <main class="container">
       <section class="new-tweet">
-        <h2>Compose Tweet</h2>
+        <!-- Tweet validation error message -->
+        <p id="tweet-validation-error"> </p>
+        <!-- New tweet -->
         <form id="tweet-form" action="/tweets" method="POST">
           <label for="tweet-text">What are you humming about?</label>
           <textarea type="text" name="text" id="tweet-textarea" rows="2"></textarea>

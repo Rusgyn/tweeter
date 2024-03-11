@@ -52,20 +52,22 @@ $(function() {
   };
  
 
-  // Click (tweet) form submit handler.
+  // Click (tweet) form submit handler. New-Tweet.
   $("#tweet-form").on("submit", function(event) {
     event.preventDefault();
     
     const $textArea = $('#tweet-textarea');
     const tweetText = $textArea.val().trim();
     const error = validateTweet(tweetText);
-
+    
     if (error) {
-      alert(error)
+      $('#tweet-validation-error').text(error);
+      //show the error message then hide after.
+      $('#tweet-validation-error').slideDown(3000, function() {
+        $('#tweet-validation-error').hide( 7000 );
+      });
     } else {
-      
       $.post("/tweets", $(this).serialize()).done(() => {
-        $('.tweet-btn').addClass('tweet-btn');
         $textArea.val('');
         loadTweets();
       })
@@ -76,9 +78,8 @@ $(function() {
     if (tweetText.length === 0) {
       return "Your tweet is empty";
     }
-
     if (tweetText.length > 140) {
-      return "Your tweet content is too long";
+      return "Your tweet content is too long. Character limit is 140.";
     }
   }
 
@@ -92,5 +93,5 @@ $(function() {
     )}
 
   loadTweets();
-
+  $('#tweet-validation-error').hide() //to remain hidden until its called.
 });
