@@ -31,7 +31,7 @@ This repository is the starter code for the project: Students will fork and clon
 ![Tweeter Home Page - min1024px view](<public/images/Tweeter Home Page - 1028px view.png>)
 
 - Tweeter Home Page - min 764px view
-![Home Page - min768px view](<public/images/Home Page - 768px view.png>)
+![Home Page - min 768px view](<public/images/Home Page - 768px view.jpg>)
 
 - Tweeter Home Page - below 764px view
 ![Home Page - below 768px view](<public/images/Home Page - below 768px view.png>)
