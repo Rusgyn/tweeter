@@ -9,13 +9,13 @@ $(function() {
     tweets.forEach(function(tweet) {
       let $html = createTweetElement(tweet);
       $('.tweets-container').prepend($html);
-    })
-  }
+    });
+  };
   
   const createTweetElement = function(tweet) {
 
     //Cross-site scripting, preventing xss.
-    const escape = function (strTweet) {
+    const escape = function(strTweet) {
       let div = document.createElement("p");
       div.appendChild(document.createTextNode(strTweet));
       return div.innerHTML;
@@ -64,17 +64,17 @@ $(function() {
       $('#tweet-validation-error').text(error);
       //show the error message then hide after.
       $('#tweet-validation-error').slideDown(3000, function() {
-        $('#tweet-validation-error').hide( 7000 );
+        $('#tweet-validation-error').hide(7000);
       });
     } else {
-      $('#tweet-validation-error').hide()
+      $('#tweet-validation-error').hide();
       $.post("/tweets", $(this).serialize()).done(() => {
         $textArea.val(''); //clear the textarea
         $('.counter').text(140); //reset the counter
         loadTweets();
-      })
+      });
     }
-  }); 
+  });
 
   const validateTweet = function(tweetText) {
     if (tweetText.length === 0) {
@@ -83,17 +83,17 @@ $(function() {
     if (tweetText.length > 140) {
       return "Your tweet content is too long. Character limit is 140.";
     }
-  }
-
+  };
+  
   const loadTweets = () => {
-   
     $.get('/tweets')
       .done((tweetData) => {
         $('#tweet-textarea').empty();
-        renderTweets(tweetData)
-      }
-    )}
+        renderTweets(tweetData);
+      });
+  };
 
   loadTweets();
-  $('#tweet-validation-error').hide() //to remain hidden until its called.
+  $('#tweet-validation-error').hide(); //to remain hidden until its called.
+
 });
