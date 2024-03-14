@@ -1,11 +1,12 @@
+/* Profile picture and name */
+
 .profile-header {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
   height: 400px;
   width: 100%;
-  background-color: mediumpurple;
+  background-color: darkgoldenrod;
   background-image: url("../images/bgworn-dots.png");
 }
 
@@ -16,11 +17,42 @@ img {
 }
 
 .profile-user-image {
-  margin-top: 150px;
-  height: 180px;
-  align-self: auto;
+  margin-top:50px;
+  height: 180px; 
+  align-self: center;
 }
 
 .profile-user-name {
   align-self: center;
+}
+
+/* Tablet Styles */
+@media only screen and (min-width: 768px) {
+  .profile-header {
+    background-color: mediumpurple;
+  }
+}
+
+/* Desktop Styles */
+@media only screen and (min-width: 1024px) {
+  .profile-header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 400px;
+    width: 30%;
+    background-color: mediumpurple;
+    background-image: url(../images/bgworn-dots.png);
+    margin-left: 3%;
+    margin-top: 3%;
+    margin-right: 9%;
+  }
+
+  .profile-user-image {
+    margin-top: 2px;
+    height: 180px; 
+    align-self: center;
+  }
+
 }

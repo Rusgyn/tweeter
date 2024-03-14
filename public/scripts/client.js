@@ -69,7 +69,8 @@ $(function() {
     } else {
       $('#tweet-validation-error').hide()
       $.post("/tweets", $(this).serialize()).done(() => {
-        $textArea.val('');
+        $textArea.val(''); //clear the textarea
+        $('.counter').text(140); //reset the counter
         loadTweets();
       })
     }

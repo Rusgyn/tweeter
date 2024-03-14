@@ -4,7 +4,6 @@
 }
 
 /* Form styling - to compose tweet */
-
 #tweet-validation-error {
   display: flex;
   justify-content: center;
@@ -56,11 +55,11 @@
   font-family: "Bungee", sans-serif;
   font-size: medium;
   padding: 0.5em;
-  width: 10%;
+  width: auto;
   border: 0;
 }
 
-.tweet-btn:active {
+.tweet-btn:hover {
   background-color: #4056A1;
   color: greenyellow;
   box-shadow: 0 12px 20px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
@@ -68,4 +67,12 @@
 
 .invalid {
   color: red;
+}
+
+/* Desktop styles */
+
+@media only screen and (min-width: 1024px) {
+  #tweet-form {
+    margin-top: 5%;
+  }
 }
