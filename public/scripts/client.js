@@ -70,7 +70,8 @@ $(function() {
       $('#tweet-validation-error').hide();
       $.post("/tweets", $(this).serialize()).done(() => {
         $textArea.val(''); //clear the textarea
-        $('.counter').text(140); //reset the counter
+        $('.counter').text(140); //reset the character counter
+        $('.tweets-container').empty(); //emptying the container before loading the data/tweet.
         loadTweets();
       });
     }
