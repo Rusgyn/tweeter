@@ -62,18 +62,27 @@ $(function() {
     
     if (error) {
       $('#tweet-validation-error').text(error);
-      //show the error message then hide after.
+      //show the error message then hide.
       $('#tweet-validation-error').slideDown(3000, function() {
         $('#tweet-validation-error').hide(7000);
       });
     } else {
       $('#tweet-validation-error').hide();
-      $.post("/tweets", $(this).serialize()).done(() => {
-        $textArea.val(''); //clear the textarea
-        $('.counter').text(140); //reset the character counter
-        $('.tweets-container').empty(); //emptying the container before loading the data/tweet.
-        loadTweets();
-      });
+      $.post("/tweets", $(this).serialize())
+        .done(() => {
+          $textArea.val(''); //clear the textarea
+          $('.counter').text(140); //reset the character counter
+          $('.tweets-container').empty(); //emptying the container before loading the data/tweet.
+          loadTweets();
+        })
+        .fail(() => {
+          $('#tweet-validation-error').show();
+          $('#tweet-validation-error').text('Internal server error, Failed to save tweet');
+          //show the error message then hide.
+          $('#tweet-validation-error').show(3000, function() {
+            $('#tweet-validation-error').hide(8000);
+          });
+        });
     }
   });
 
@@ -98,3 +107,19 @@ $(function() {
   $('#tweet-validation-error').hide(); //to remain hidden until its called.
 
 });
+
+/**if (error) {
+      $('#tweet-validation-error').text(error);
+      //show the error message then hide after.
+      $('#tweet-validation-error').slideDown(3000, function() {
+        $('#tweet-validation-error').hide(7000);
+      });
+    } else {
+      $('#tweet-validation-error').hide();
+      $.post("/tweets", $(this).serialize()).done(() => {
+        $textArea.val(''); //clear the textarea
+        $('.counter').text(140); //reset the character counter
+        $('.tweets-container').empty(); //emptying the container before loading the data/tweet.
+        loadTweets();
+      });
+    } */
