@@ -1,6 +1,7 @@
 nav {
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
   align-items: center;
   height: 120px;
   padding-left: 1.5em;
@@ -10,8 +11,17 @@ nav {
 }
 /* Tweeter Logo within navigator */
 span { 
-  display: inherit;
-  flex-direction: inherit;
   font-family: Bungee;
-  justify-content: space-between;
+}
+
+.write-tweet-logo i {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  font-family: inherit;
+}
+
+i {
+  display: flex;
+  color: red;
 }
