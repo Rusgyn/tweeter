@@ -12,7 +12,7 @@ nav {
   color: #FFFFFF;
 }
 /* Tweeter Logo within navigator */
-span { 
+.logo { 
   font-family: Bungee;
 }
 /* Write New Tweet, and double arrow icon */
