@@ -1,3 +1,5 @@
+/* Navigator header */
+
 nav {
   display: flex;
   flex-direction: row;
@@ -13,15 +15,16 @@ nav {
 span { 
   font-family: Bungee;
 }
-
-.write-tweet-logo i {
+/* Write New Tweet, and double arrow icon */
+.nav-new-tweet {
   display: flex;
+  flex-direction: column;
   flex-wrap: wrap;
-  justify-content: center;
+  align-items: center;
   font-family: inherit;
 }
-
-i {
+.new-tweet {
   display: flex;
-  color: red;
+  flex-direction: row;
+  justify-content: center;
 }
