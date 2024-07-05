@@ -10,6 +10,10 @@ nav {
   padding-right: 1.5em;
   background-color: #4056A1;
   color: #FFFFFF;
+  /* makes nav bar fixed */
+  position: fixed;
+  top: 0px;
+  width: 100%
 }
 /* Tweeter Logo within navigator */
 .logo { 
