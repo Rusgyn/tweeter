@@ -1,0 +1,11 @@
+/* Header styling */
+
+header {
+  width: 100%;
+  background-color: #9484fb;
+  background-image: url("asfalt-dark-background.png");
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
