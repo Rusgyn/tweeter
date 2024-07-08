@@ -27,7 +27,7 @@ nav {
   align-items: center;
   font-family: inherit;
 }
-.new-tweet {
+.write-new-tweet {
   display: flex;
   flex-direction: row;
   justify-content: center;
