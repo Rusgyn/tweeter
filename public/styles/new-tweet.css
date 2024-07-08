@@ -7,33 +7,34 @@ To compose Tweet */
   flex-direction: column;
 }
 
-textarea {
+.new-tweet-text {
   width: 100%;
-  margin-top: 0.50em;
+  margin-top: 0.25em;
+  resize: none;
   border-style: none;
   border-bottom: black;
   border-bottom-style: outset;
   background-color: #f4f1ec;
+  padding: 0.50em;
 }
 
-textarea:focus { 
+.new-tweet-text:focus { 
   outline: none !important;
   box-shadow: 0 0 15px #9484fb;
 }
 
-footer {
+.new-tweet-footer {
   display: flex;
   justify-content: space-between;
   font-family: Bungee;
-  border-style: none;
   margin-top: 0.5em;
 }
 
 .tweet-btn {
   background-color: #4056A1;
   color: #FFFFFF;
-  border-style: none;
-  padding: 0.30em;
+  border: none;
+  /* padding: 0.30em; */
 }
 
 .tweet-btn:hover {
