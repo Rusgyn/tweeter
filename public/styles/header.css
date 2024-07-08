@@ -1,6 +1,7 @@
 /* Header styling */
 
 header {
+  height: 400px;
   width: 100%;
   background-color: #9484fb;
   background-image: url("asfalt-dark-background.png");
