@@ -12,7 +12,7 @@ To compose Tweet */
   margin-top: 0.25em;
   resize: none;
   border-style: none;
-  border-bottom: black;
+  border-bottom: 5px solid black;
   border-bottom-style: outset;
   background-color: #f4f1ec;
   padding: 0.50em;
@@ -34,7 +34,7 @@ To compose Tweet */
   background-color: #4056A1;
   color: #FFFFFF;
   border: none;
-  /* padding: 0.30em; */
+  padding: 0.30em;
 }
 
 .tweet-btn:hover {
