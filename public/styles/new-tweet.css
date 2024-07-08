@@ -1,0 +1,50 @@
+/* Form page Styling
+To compose Tweet */
+
+.new-tweet {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+textarea {
+  width: 100%;
+  margin-top: 0.50em;
+  border-style: none;
+  border-bottom: black;
+  border-bottom-style: outset;
+  background-color: #f4f1ec;
+}
+
+textarea:focus { 
+  outline: none !important;
+  box-shadow: 0 0 15px #9484fb;
+}
+
+footer {
+  display: flex;
+  justify-content: space-between;
+  font-family: Bungee;
+  border-style: none;
+  margin-top: 0.5em;
+}
+
+.tweet-btn {
+  background-color: #4056A1;
+  color: #FFFFFF;
+  border-style: none;
+  padding: 0.30em;
+}
+
+.tweet-btn:hover {
+  background-color: darkslateblue;
+  color: yellow;
+}
+.tweet-btn:focus {
+  box-shadow: 0 0 15px #9484fb;
+}
+
+.counter {
+  color: black;
+  padding: 0.30em;
+}
