@@ -7,7 +7,7 @@ To compose Tweet */
   flex-direction: column;
 }
 
-.new-tweet-text {
+#tweet-textarea {
   width: 100%;
   margin-top: 0.25em;
   resize: none;
@@ -18,7 +18,7 @@ To compose Tweet */
   padding: 0.50em;
 }
 
-.new-tweet-text:focus { 
+#tweet-textarea:focus { 
   outline: none !important;
   box-shadow: 0 0 15px #9484fb;
 }
@@ -48,4 +48,8 @@ To compose Tweet */
 .counter {
   color: black;
   padding: 0.30em;
+}
+
+.invalid {
+  color: red;
 }
