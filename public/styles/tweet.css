@@ -1,0 +1,57 @@
+article {
+  display: flex;
+  flex-direction: column;
+  /* align-items: center; */
+  margin: 3em 0 3em 0;
+  /* margin-top: 1em; */ 
+  /* width: 100%; */
+  border: 5px solid black;
+}
+
+article:hover {
+  box-shadow: 12px 12px 2px 1px rgba(0, 0, 255, .2);
+}
+
+article header {
+  background-image: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  height: auto;
+  background-color: #f4f1ec;
+  margin: auto;
+  padding: 1em;
+  
+}
+
+article section {
+  display: flex;
+  width: 98%;
+  margin: 0.25em;
+  resize: none;
+  border-style: none;
+  border-bottom: 5px solid black;
+  border-bottom-style: outset;
+  background-color: #f4f1ec;
+  padding-left: 1em;
+  padding-right: 1em;
+}
+
+article footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 1em;
+}
+
+.fa-flag:hover {
+  color: goldenrod;
+}
+
+.fa-retweet:hover {
+  color: blue;
+}
+
+.fa-heart:hover {
+  color: red;
+}
