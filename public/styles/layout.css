@@ -30,6 +30,7 @@ body {
  /* main section */
  .container {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   background-color: inherit;
   width: 90%;
