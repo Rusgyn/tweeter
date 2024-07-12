@@ -1,3 +1,6 @@
+/* Tweet containers Styling*/
+
+/* Tweet container */
 article {
   display: flex;
   flex-direction: column;
@@ -9,6 +12,7 @@ article:hover {
   box-shadow: 12px 12px 2px 1px rgba(0, 0, 255, .2);
 }
 
+/* Header. User avatar, Name, and Username  */
 article header {
   background-image: none;
   display: flex;
@@ -21,6 +25,7 @@ article header {
   
 }
 
+/* User's tweet */
 article section {
   display: flex;
   width: 98%;
@@ -34,6 +39,7 @@ article section {
   padding-right: 1em;
 }
 
+/* Footer. Date, and icons */
 article footer {
   display: flex;
   flex-direction: row;
@@ -41,6 +47,7 @@ article footer {
   padding: 1em;
 }
 
+/* icons */
 .fa-flag:hover {
   color: goldenrod;
 }
