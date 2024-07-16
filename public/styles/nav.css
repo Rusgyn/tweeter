@@ -32,3 +32,7 @@ nav {
   flex-direction: row;
   justify-content: center;
 }
+
+.fa-angles-down {
+  color: red;
+}
