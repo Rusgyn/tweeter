@@ -8,7 +8,7 @@ To compose Tweet */
   justify-content: center;
 }
 
-#tweet-textarea {
+#tweet-text {
   width: 100%;
   margin-top: 0.25em;
   resize: none;
@@ -19,7 +19,7 @@ To compose Tweet */
   padding: 0.50em;
 }
 
-#tweet-textarea:focus { 
+#tweet-text:focus { 
   outline: none !important;
   box-shadow: 0 0 15px #9484fb;
 }
