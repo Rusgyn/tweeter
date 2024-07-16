@@ -1,6 +1,10 @@
 /* Tweet containers Styling*/
 
 /* Tweet container */
+.tweets-container {
+  width: 100%;
+}
+
 article {
   display: flex;
   flex-direction: column;
