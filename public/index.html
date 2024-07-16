@@ -57,7 +57,7 @@
         <h2>Compose Tweet</h2>
         <form action="/tweets" method="POST">
           <label for="tweet-text">What are you humming about?</label>
-          <textarea type="text" name="text" id="tweet-textarea"></textarea>
+          <textarea type="text" name="text" id="tweet-text"></textarea>
           <footer class="new-tweet-footer">
             <button class="tweet-btn" type="submit">Tweet</button>
             <output name="counter" class="counter" for="tweet-text">140</output>
@@ -67,6 +67,7 @@
 
       <!-- tweet container -->
       <article>
+        <!-- Header: User info -->
         <header>
           <div>
             <i class="fa-regular fa-user"></i> &nbsp;
@@ -76,9 +77,11 @@
             @UserName
           </div>
         </header>
+        <!-- User tweets -->
         <section>
           <p class="tweet-txt-container">Hello World!!!</p>
         </section>
+        <!-- Footer: Time stamp and tweets icon -->
         <footer>
           <div>
             10 days
@@ -89,6 +92,7 @@
             <i class="fa-solid fa-heart"></i>
           </div>
         </footer>
+
       </article>
 
     </main>
