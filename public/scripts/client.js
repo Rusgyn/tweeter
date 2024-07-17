@@ -79,7 +79,13 @@ $(document).ready(() => {
   $tweetForm.on('submit', (event) => {
     //prevent the default behaviour of the browser
     event.preventDefault();
-    alert("The Form has submitted!")
+    alert("The Form has submitted!"); // end-user info/alert for reference
+    
+    // Grab the data from the form
+    const newData = $tweetForm.serialize(); // create a url-encoded string for the POST request to send. serialize() method creates a text string. Returns string.
+    
+    console.log(newData); // developer checking output purpose.
+
   })
 
 
