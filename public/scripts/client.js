@@ -69,6 +69,18 @@ $(document).ready(() => {
 
     return $tweet;
   };
-
+  
   renderTweets(data);
+
+  // Grab the tweet form
+  const $tweetForm = $('#new-tweet-form');
+
+  // Listen for the submit event of the form
+  $tweetForm.on('submit', (event) => {
+    //prevent the default behaviour of the browser
+    event.preventDefault();
+    alert("The Form has submitted!")
+  })
+
+
 });
