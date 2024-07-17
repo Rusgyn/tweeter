@@ -1,7 +1,7 @@
 $(document).ready(function() { //runs a callback when the DOM is ready to be manipulated with jQuery.
   const maxCount = $('.counter').html(); // => 140
 
-  $('#tweet-textarea').on('input', function() {
+  $('#tweet-text').on('input', function() {
     let counter = $(this).closest('form').find('.counter');// Use traverse to target the counter from 'this' (the textarea)
     let tweet = this.value;// The character/s you press
     let count = maxCount - tweet.length;
