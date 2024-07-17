@@ -26,7 +26,11 @@ article header {
   background-color: #f4f1ec;
   margin: auto;
   padding: 1em;
-  
+}
+
+.tweet-uname-avatar {
+  display: flex;
+  align-items: center;
 }
 
 /* User's tweet */
