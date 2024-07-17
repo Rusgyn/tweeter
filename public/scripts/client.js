@@ -3,32 +3,6 @@
  * jQuery is already loaded
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function */
 
-// Fake data taken from initial-tweets.json
-const data = [
-  {
-    "user": {
-      "name": "Newton",
-      "avatars": "https://i.imgur.com/73hZDYK.png"
-      ,
-      "handle": "@SirIsaac"
-    },
-    "content": {
-      "text": "If I have seen further it is by standing on the shoulders of giants"
-    },
-    "created_at": 1461116232227
-  },
-  {
-    "user": {
-      "name": "Descartes",
-      "avatars": "https://i.imgur.com/nlhLi3I.png",
-      "handle": "@rd" },
-    "content": {
-      "text": "Je pense , donc je suis"
-    },
-    "created_at": 1461113959088
-  }
-];
-
 $(document).ready(() => {
 
   const renderTweets = function(tweets) {
@@ -70,19 +44,16 @@ $(document).ready(() => {
     return $tweet;
   };
   
-  renderTweets(data);
-
-  // Grab the tweet form
+    // Grab the tweet form
   const $tweetForm = $('#new-tweet-form');
 
   // Listen for the submit event of the form
   $tweetForm.on('submit', (event) => {
     //prevent the default behaviour of the browser
     event.preventDefault();
-    alert("The Form has submitted!"); // end-user info/alert for reference
     
     // Grab the data from the form
-    const newData = $tweetForm.serialize(); // create a url-encoded string for the POST request to send. serialize() method creates a text string. Returns string.
+    const newData = $tweetForm.serialize(); // create a url-encoded string for the POST request to send.
 
     //POST the form. AJAX POST request that sends the form data to the server.
     $.ajax({
@@ -90,10 +61,27 @@ $(document).ready(() => {
       url:'/tweets',
       data: newData,
       success: (res) => {
-        console.log("THE RESPONSE: ", res);
+        // re-fetch all the tweet data
+        loadTweets();
       }
     });
+
+    // clear the form
+    $('#tweet-text').val('');
+
   });
 
+  // load the tweets
+  const loadTweets = function() {
+    // make a AJAX GET request to /tweets
+    $.ajax({
+      method: 'GET',
+      url: '/tweets',
+      success: (tweetData) => {
+        renderTweets(tweetData);
+      }
+    });
+  };
 
+  loadTweets();
 });
