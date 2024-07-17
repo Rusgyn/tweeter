@@ -66,8 +66,8 @@ $(document).ready(() => {
       }
     });
 
-    // clear the form
-    $('#tweet-text').val('');
+    $('#tweet-text').val('');// clear the form
+    $('.counter').val(140);// reset to our default max number of text characters
 
   });
 
