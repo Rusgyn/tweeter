@@ -83,10 +83,17 @@ $(document).ready(() => {
     
     // Grab the data from the form
     const newData = $tweetForm.serialize(); // create a url-encoded string for the POST request to send. serialize() method creates a text string. Returns string.
-    
-    console.log(newData); // developer checking output purpose.
 
-  })
+    //POST the form. AJAX POST request that sends the form data to the server.
+    $.ajax({
+      method: 'POST',
+      url:'/tweets',
+      data: newData,
+      success: (res) => {
+        console.log("THE RESPONSE: ", res);
+      }
+    });
+  });
 
 
 });
