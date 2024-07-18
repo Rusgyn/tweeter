@@ -70,11 +70,14 @@ $(document).ready(() => {
       $('#validation-error').text(tweetCondition);
       //Displaying the error with effects and warning icons.
       $('#validation-error').prepend('<i class="fa-solid fa-triangle-exclamation"></i> ').append(' <i class="fa-solid fa-triangle-exclamation"></i>').slideDown( 2000 , function () {
-        $('#validation-error').delay(3000).hide(2000);
+        $('#validation-error').delay(2000).hide(2000);
       });
 
       return;
     } else {
+      //Case: Validation is successful, no error.
+      $('#validation-error').hide(); //Keep the section hidden.
+
       // Grab the data from the form
       const newTweetData = $tweetForm.serialize(); // create a url-encoded string for the POST request to send.
 
@@ -87,8 +90,13 @@ $(document).ready(() => {
           // re-fetch all the tweet data
           loadTweets();
         },
-        error: (error) => {
-          alert("There's an error posting your tweet. ", error);
+        error: () => {
+          $('#validation-error').show();
+          $('#validation-error').text('Internal Server Error. Failed to save tweet');
+          //Displaying the error with effects and warning icons.
+          $('#validation-error').prepend('<i class="fa-solid fa-triangle-exclamation"></i> ').append(' <i class="fa-solid fa-triangle-exclamation"></i>').slideDown( 2000 , function () {
+            $('#validation-error').delay(2000).hide(2000);
+          });
         }
       });
 
@@ -112,7 +120,7 @@ $(document).ready(() => {
   // load the tweets
   const loadTweets = function() {
     
-    // make a AJAX GET request to /tweets
+    // make AJAX GET request to /tweets
     $.ajax({
       method: 'GET',
       url: '/tweets',
@@ -120,12 +128,18 @@ $(document).ready(() => {
         $('#tweets-container').empty(); // Empty the tweets container before rendering all Tweets to avoid duplication.
         renderTweets(tweetData);
       },
-      error: (error) => {
-        alert("There's an error loading all tweets. ", error);
+      error: () => {
+        $('#validation-error').show();
+        $('#validation-error').text('Internal Server Error. Failed to load tweets');
+        //Displaying the error with effects and warning icons.
+        $('#validation-error').prepend('<i class="fa-solid fa-triangle-exclamation"></i> ').append(' <i class="fa-solid fa-triangle-exclamation"></i>').slideDown( 2000 , function () {
+          $('#validation-error').delay(2000).hide(2000);
+        });
       }
     });
     
   };
 
   loadTweets();
+  $('#validation-error').hide(); //to remain hidden until its called.
 });
