@@ -13,6 +13,16 @@ $(document).ready(() => {
   };
 
   const createTweetElement = function(tweet) {
+
+    //Function that prevents Cross-Site Scripting (XSS) attach with Escaping. Converting insecure text into a safe "encoded" representation.
+    const escape = function (str) {
+      let div = document.createElement("div");
+      div.appendChild(document.createTextNode(str));
+      return div.innerHTML;
+    };
+
+    const safeHTML = `<p>${escape(tweet.content.text)}</p>`;
+
     let $tweet = $(`
       <article>
         <header>
@@ -26,7 +36,7 @@ $(document).ready(() => {
         </header>
   
         <section>
-          <p class="tweet-txt-container">${tweet.content.text}</p>
+          <p class="tweet-txt-container">${safeHTML}</p>
         </section>
     
         <footer>
