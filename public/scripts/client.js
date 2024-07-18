@@ -75,7 +75,7 @@ $(document).ready(() => {
           loadTweets();
         },
         error: (error) => {
-          alert(error);
+          alert("There's an error posting your tweet. ", error);
         }
       });
     }
@@ -105,7 +105,7 @@ $(document).ready(() => {
         renderTweets(tweetData);
       },
       error: (error) => {
-        alert(error);
+        alert("There's an error loading all tweets. ", error);
       }
     });
     
