@@ -67,7 +67,12 @@ $(document).ready(() => {
     const tweetCondition = validateTweet(tweetText);
 
     if (tweetCondition) {
-      alert(tweetCondition);
+      $('#validation-error').text(tweetCondition);
+      //Displaying the error with effects.
+      $('#validation-error').slideDown( 2000 , function () {
+        $('#validation-error').delay(3000).hide(2000);
+      });
+
       return;
     } else {
       // Grab the data from the form
@@ -99,7 +104,7 @@ $(document).ready(() => {
     }
 
     if (tweetText.length > 140) {
-      return "Your tweet content is too long";
+      return "Your tweet is too long, limit to 140 characters only";
     }
   };
 

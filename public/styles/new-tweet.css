@@ -2,10 +2,21 @@
 To compose Tweet */
 
 .new-tweet {
-  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  width: 100%;
+  margin: 1.5em 0em 1.5em 0em;
+}
+
+#validation-error {
+  padding: 10px;
+  text-align: center;
+  background-color: #e6afaf;
+  background-image: url("https://www.transparenttextures.com/patterns/elastoplast.png");
+  border: solid 1px red;
+  display: none;
+  color: rgb(180, 1, 1);
 }
 
 #tweet-text {

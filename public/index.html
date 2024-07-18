@@ -56,7 +56,9 @@
     <main class="container">
       <!-- Form page -->
       <section class="new-tweet">
-        <h2>Compose Tweet</h2>
+        <!-- Tweet validation UI error -->
+        <p id="validation-error"></p>
+        <!-- New tweet -->
         <form id="new-tweet-form"  action="/tweets" method="POST">
           <label for="tweet-text">What are you humming about?</label>
           <textarea type="text" name="text" id="tweet-text"></textarea>
