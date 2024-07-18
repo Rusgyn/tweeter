@@ -84,8 +84,6 @@ $(document).ready(() => {
         url:'/tweets',
         data: newTweetData,
         success: (res) => {
-          $('#tweet-text').val('');// clearing the form
-          $('.counter').text(140);// reset to our default max number of text character
           // re-fetch all the tweet data
           loadTweets();
         },
@@ -93,6 +91,9 @@ $(document).ready(() => {
           alert("There's an error posting your tweet. ", error);
         }
       });
+
+      $('#tweet-text').val('');// clearing the form
+      $('.counter').css("color", "black").text(140)// reset to our default max number of text character
     }
 
   });
