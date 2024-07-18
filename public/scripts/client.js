@@ -58,6 +58,7 @@ $(document).ready(() => {
 
     if (tweetCondition) {
       alert(tweetCondition);
+      return;
     } else {
       // Grab the data from the form
       const newTweetData = $tweetForm.serialize(); // create a url-encoded string for the POST request to send.
@@ -70,6 +71,9 @@ $(document).ready(() => {
         success: (res) => {
           // re-fetch all the tweet data
           loadTweets();
+        },
+        error: (error) => {
+          alert(error);
         }
       });
 
