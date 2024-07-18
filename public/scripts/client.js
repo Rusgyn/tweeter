@@ -44,7 +44,7 @@ $(document).ready(() => {
     return $tweet;
   };
   
-    // Grab the tweet form
+  // Grab the tweet form
   const $tweetForm = $('#new-tweet-form');
 
   // Listen for the submit event of the form
@@ -52,24 +52,43 @@ $(document).ready(() => {
     //prevent the default behaviour of the browser
     event.preventDefault();
     
-    // Grab the data from the form
-    const newData = $tweetForm.serialize(); // create a url-encoded string for the POST request to send.
+    const $textArea = $('#tweet-text');
+    const tweetText = $textArea.val();
+    const tweetCondition = validateTweet(tweetText);
 
-    //POST the form. AJAX POST request that sends the form data to the server.
-    $.ajax({
-      method: 'POST',
-      url:'/tweets',
-      data: newData,
-      success: (res) => {
-        // re-fetch all the tweet data
-        loadTweets();
-      }
-    });
+    if (tweetCondition) {
+      alert(tweetCondition);
+    } else {
+      // Grab the data from the form
+      const newTweetData = $tweetForm.serialize(); // create a url-encoded string for the POST request to send.
 
-    $('#tweet-text').val('');// clear the form
-    $('.counter').val(140);// reset to our default max number of text characters
+      //POST the form. AJAX POST request that sends the form data to the server.
+      $.ajax({
+        method: 'POST',
+        url:'/tweets',
+        data: newTweetData,
+        success: (res) => {
+          // re-fetch all the tweet data
+          loadTweets();
+        }
+      });
+
+      $('#tweet-text').val('');// clearing the form
+      $('.counter').val(140);// reset to our default max number of text characters
+    }
 
   });
+
+  //Helper Function: Validate the new tweet
+  const validateTweet = function(tweetText) {
+    if (tweetText.length === 0) {
+      return "Your tweet is empty";
+    }
+
+    if (tweetText.length > 140) {
+      return "Your tweet content is too long";
+    }
+  };
 
   // load the tweets
   const loadTweets = function() {
