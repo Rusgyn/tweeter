@@ -11,6 +11,7 @@ To compose Tweet */
 
 #validation-error {
   padding: 10px;
+  margin: inherit;
   text-align: center;
   background-color: #e6afaf;
   background-image: url("https://www.transparenttextures.com/patterns/elastoplast.png");
