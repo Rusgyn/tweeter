@@ -69,6 +69,8 @@ $(document).ready(() => {
         url:'/tweets',
         data: newTweetData,
         success: (res) => {
+          $('#tweet-text').val('');// clearing the form
+          $('.counter').text(140);// reset to our default max number of text character
           // re-fetch all the tweet data
           loadTweets();
         },
@@ -76,9 +78,6 @@ $(document).ready(() => {
           alert(error);
         }
       });
-
-      $('#tweet-text').val('');// clearing the form
-      $('.counter').val(140);// reset to our default max number of text characters
     }
 
   });
@@ -96,14 +95,20 @@ $(document).ready(() => {
 
   // load the tweets
   const loadTweets = function() {
+    
     // make a AJAX GET request to /tweets
     $.ajax({
       method: 'GET',
       url: '/tweets',
       success: (tweetData) => {
+        $('#tweets-container').empty(); // Empty the tweets container before rendering all Tweets to avoid duplication.
         renderTweets(tweetData);
+      },
+      error: (error) => {
+        alert(error);
       }
     });
+    
   };
 
   loadTweets();
