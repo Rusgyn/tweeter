@@ -53,7 +53,7 @@ $(document).ready(() => {
     event.preventDefault();
     
     const $textArea = $('#tweet-text');
-    const tweetText = $textArea.val();
+    const tweetText = ($textArea.val()).trim(); //remove any leading or trailing white spaces
     const tweetCondition = validateTweet(tweetText);
 
     if (tweetCondition) {
