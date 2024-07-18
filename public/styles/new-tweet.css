@@ -10,8 +10,8 @@ To compose Tweet */
 }
 
 #validation-error {
-  padding: 10px;
-  margin: inherit;
+  padding: 20px;
+  margin: 0em 0em 1em 0;
   text-align: center;
   background-color: #e6afaf;
   background-image: url("https://www.transparenttextures.com/patterns/elastoplast.png");
