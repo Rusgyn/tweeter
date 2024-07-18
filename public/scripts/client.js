@@ -68,8 +68,8 @@ $(document).ready(() => {
 
     if (tweetCondition) {
       $('#validation-error').text(tweetCondition);
-      //Displaying the error with effects.
-      $('#validation-error').slideDown( 2000 , function () {
+      //Displaying the error with effects and warning icons.
+      $('#validation-error').prepend('<i class="fa-solid fa-triangle-exclamation"></i> ').append(' <i class="fa-solid fa-triangle-exclamation"></i>').slideDown( 2000 , function () {
         $('#validation-error').delay(3000).hide(2000);
       });
 
