@@ -15,10 +15,12 @@ nav {
   top: 0px;
   width: 100%
 }
+
 /* Tweeter Logo within navigator */
 .logo { 
   font-family: Bungee;
 }
+
 /* Write New Tweet, and double arrow icon */
 .nav-new-tweet {
   display: flex;
@@ -35,6 +37,10 @@ nav {
   border: none;
   background-color: inherit;
   color: inherit;
+}
+
+.write-new-tweet:hover {
+  box-shadow: 0 0 15px #9484fb;
 }
 
 .fa-angles-down {
