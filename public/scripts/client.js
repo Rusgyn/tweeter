@@ -5,12 +5,14 @@
 
 
 $(document).ready(() => {
-  //Nav bar. Write a New Tweet.
-  // New tweet form will pop up.
-  $('.write-new-tweet').on('click', function(event) {
-    //prevent the default behaviour of the browser
-    event.preventDefault();
-    $('#new-tweet-form').toggle("slow");
+
+  // Nav bar. New Tweet Form will show/hide when "Write a New Tweet" is called/clicked.
+  $('.write-new-tweet').on('click', () => {
+    if ($('#new-tweet-form').is(':hidden')) {
+      $('#new-tweet-form').slideDown("slow");
+    } else {
+      $('#new-tweet-form').slideUp("slow");
+    }
   });
 
   const renderTweets = function(tweets) {
@@ -110,7 +112,7 @@ $(document).ready(() => {
 
       $('#tweet-text').val('');// clearing the form
       $('.counter').text(140)// reset to our default max number of text character
-      $('#new-tweet-form').hide("slow"); // Hide the form, until its called/clicked
+      $('#new-tweet-form').hide("slow"); // Hide the form, until its called
     }
 
   });
@@ -150,7 +152,7 @@ $(document).ready(() => {
   };
 
   loadTweets();
-  
+
   $('#validation-error').hide(); //to remain hidden until its called.
   $('#new-tweet-form').hide(); //to remain the form hidden until its called.
 });
