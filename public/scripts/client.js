@@ -12,13 +12,13 @@ $(document).ready(() => {
     if(currentPosition > initialPosition) {
       //Case: scrolling down
       $('#scroll-btn').show();
-      $( 'nav' ).addClass('navPosition');
-      $('.nav-new-tweet').hide();
-      $('#new-tweet-form').hide(); //when button is clicked then scroll down again.
+      $('nav').addClass('navPosition');
+      $('.nav-new-tweet, #new-tweet-form').hide();
 
+      //Grab the Bottom button and facilitate click event.
       $('#scroll-btn').on('click', function() {
         window.scrollTo(0,0); //Jump to the top of the page
-        $( 'nav' ).show();
+        $( 'nav' ).removeClass('navPosition');
         $('#new-tweet-form').slideDown("slow");
         $('#tweet-text').focus(); //automatically place the cursor in the text area when the form slides down, improving the user experience.
         $('#scroll-btn').hide();
@@ -26,7 +26,7 @@ $(document).ready(() => {
     } else {
       //Case: scrolling down
       $('#scroll-btn').hide();
-      $( 'nav' ).removeClass('navPosition');
+      $('nav').removeClass('navPosition');
       $('.nav-new-tweet').show();
     }
     initialPosition = currentPosition;
@@ -180,8 +180,8 @@ $(document).ready(() => {
   };
 
   loadTweets();
-  
-  $('#validation-error').hide(); //to remain hidden until its called.
-  $('#new-tweet-form').hide(); //to remain the form hidden until its called.
-  $('#scroll-btn').hide(); //to remain the scroll button hidden until its called.
+
+  //Events that remain hidden until its called.
+  $('#validation-error, #new-tweet-form, #scroll-btn').hide(); 
+
 });
