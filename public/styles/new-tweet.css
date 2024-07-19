@@ -6,7 +6,7 @@ To compose Tweet */
   flex-direction: column;
   justify-content: center;
   width: 100%;
-  margin: 1.5em 0em 1.5em 0em;
+  margin: 1.5em 0em 2em 0em;
 }
 
 #validation-error {
