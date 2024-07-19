@@ -10,6 +10,7 @@ $(document).ready(() => {
   $('.write-new-tweet').on('click', () => {
     if ($('#new-tweet-form').is(':hidden')) {
       $('#new-tweet-form').slideDown("slow");
+      $('#tweet-text').focus();
     } else {
       $('#new-tweet-form').slideUp("slow");
     }
