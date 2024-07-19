@@ -35,9 +35,9 @@
     <nav>
       <span class = "logo">tweeter</span>
       <div class = "nav-new-tweet">
-        <div class = "write-new-tweet">
+        <button class ="write-new-tweet">
           <strong>Write</strong>&nbsp a new tweet
-        </div>
+        </button>
         <i class="fa-solid fa-angles-down fa-flip"></i>
       </div>
     </nav>
@@ -59,7 +59,7 @@
         <!-- Tweet validation UI error -->
         <p id="validation-error"></p>
         <!-- New tweet -->
-        <form id="new-tweet-form"  action="/tweets" method="POST">
+        <form id="new-tweet-form" action="/tweets" method="POST">
           <label for="tweet-text">What are you humming about?</label>
           <textarea type="text" name="text" id="tweet-text"></textarea>
           <footer class="new-tweet-footer">

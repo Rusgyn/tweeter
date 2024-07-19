@@ -27,10 +27,14 @@ nav {
   align-items: center;
   font-family: inherit;
 }
+
 .write-new-tweet {
   display: flex;
   flex-direction: row;
   justify-content: center;
+  border: none;
+  background-color: inherit;
+  color: inherit;
 }
 
 .fa-angles-down {

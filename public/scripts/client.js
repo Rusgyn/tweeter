@@ -3,7 +3,15 @@
  * jQuery is already loaded
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function */
 
+
 $(document).ready(() => {
+  //Nav bar. Write a New Tweet.
+  // New tweet form will pop up.
+  $('.write-new-tweet').on('click', function(event) {
+    //prevent the default behaviour of the browser
+    event.preventDefault();
+    $('#new-tweet-form').toggle("slow");
+  });
 
   const renderTweets = function(tweets) {
     tweets.forEach((tweet) => { // loops through tweets
@@ -101,7 +109,8 @@ $(document).ready(() => {
       });
 
       $('#tweet-text').val('');// clearing the form
-      $('.counter').css("color", "black").text(140)// reset to our default max number of text character
+      $('.counter').text(140)// reset to our default max number of text character
+      $('#new-tweet-form').hide("slow"); // Hide the form, until its called/clicked
     }
 
   });
@@ -141,5 +150,7 @@ $(document).ready(() => {
   };
 
   loadTweets();
+  
   $('#validation-error').hide(); //to remain hidden until its called.
+  $('#new-tweet-form').hide(); //to remain the form hidden until its called.
 });
