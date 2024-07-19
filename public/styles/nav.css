@@ -58,17 +58,17 @@ nav {
   color: red;
 }
 
+/* Bottom button. Scrolling */
 .fa-circle-up {
   color: red;
- }
+}
 
- #scroll-btn {
-  position: sticky;
-  bottom: 8%;
-  left: 93%
- }
+.fa-circle-up:hover {
+  color: #39A2AE;
+}
 
- /* #scroll-btn i {
-  width: 50px;
-  height: 50px;
- } */
+#scroll-btn {
+position: sticky;
+bottom: 8%;
+left: 93%
+}
