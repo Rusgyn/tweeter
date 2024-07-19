@@ -16,6 +16,17 @@ nav {
   width: 100%
 }
 
+/* dynamic nav styling for scroll button */
+.scroll-logo {
+  position: sticky;
+}
+
+.navPosition {
+  background-color: transparent;
+  color: #FFFFFF;
+  width: 100%
+}
+
 /* Tweeter Logo within navigator */
 .logo { 
   font-family: Bungee;
@@ -46,3 +57,18 @@ nav {
 .fa-angles-down {
   color: red;
 }
+
+.fa-circle-up {
+  color: red;
+ }
+
+ #scroll-btn {
+  position: sticky;
+  bottom: 8%;
+  left: 93%
+ }
+
+ /* #scroll-btn i {
+  width: 50px;
+  height: 50px;
+ } */

@@ -3,10 +3,38 @@
  * jQuery is already loaded
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function */
 
-
 $(document).ready(() => {
 
-  // Nav bar. New Tweet Form will show/hide when "Write a New Tweet" is called/clicked.
+  let initialPosition = $(window).scrollTop();// position start at 0.
+  // Helper Function: UI scrolling the page.
+  const pageScrolling = function() {
+    let currentPosition = $(window).scrollTop();
+    if(currentPosition > initialPosition) {
+      //Case: scrolling down
+      $('#scroll-btn').show();
+      $( 'nav' ).addClass('navPosition');
+      $('.nav-new-tweet').hide();
+      $('#new-tweet-form').hide(); //when button is clicked then scroll down again.
+
+      $('#scroll-btn').on('click', function() {
+        window.scrollTo(0,0); //Jump to the top of the page
+        $( 'nav' ).show();
+        $('#new-tweet-form').slideDown("slow");
+        $('#tweet-text').focus(); //automatically place the cursor in the text area when the form slides down, improving the user experience.
+        $('#scroll-btn').hide();
+      });
+    } else {
+      //Case: scrolling down
+      $('#scroll-btn').hide();
+      $( 'nav' ).removeClass('navPosition');
+      $('.nav-new-tweet').show();
+    }
+    initialPosition = currentPosition;
+  };
+
+  $(window).scroll(pageScrolling); //Always listens in any scrolling event.
+
+  // Nav bar section. New Tweet Form will show/hide when "Write a New Tweet" is called/clicked.
   $('.write-new-tweet').on('click', () => {
     if ($('#new-tweet-form').is(':hidden')) {
       $('#new-tweet-form').slideDown("slow");
@@ -14,8 +42,9 @@ $(document).ready(() => {
     } else {
       $('#new-tweet-form').slideUp("slow");
     }
+    return;
   });
-
+    
   const renderTweets = function(tweets) {
     tweets.forEach((tweet) => { // loops through tweets
       let $tweet = createTweetElement(tweet); // calls createTweetElement for each tweet
@@ -24,7 +53,6 @@ $(document).ready(() => {
   };
 
   const createTweetElement = function(tweet) {
-
     //Function that prevents Cross-Site Scripting (XSS) attach with Escaping. Converting insecure text into a safe "encoded" representation.
     const escape = function (str) {
       let div = document.createElement("div");
@@ -115,7 +143,6 @@ $(document).ready(() => {
       $('.counter').text(140)// reset to our default max number of text character
       $('#new-tweet-form').hide("slow"); // Hide the form, until its called
     }
-
   });
 
   //Helper Function: Validate the new tweet
@@ -153,7 +180,8 @@ $(document).ready(() => {
   };
 
   loadTweets();
-
+  
   $('#validation-error').hide(); //to remain hidden until its called.
   $('#new-tweet-form').hide(); //to remain the form hidden until its called.
+  $('#scroll-btn').hide(); //to remain the scroll button hidden until its called.
 });
