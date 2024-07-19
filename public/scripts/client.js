@@ -10,7 +10,7 @@ $(document).ready(() => {
   $('.write-new-tweet').on('click', () => {
     if ($('#new-tweet-form').is(':hidden')) {
       $('#new-tweet-form').slideDown("slow");
-      $('#tweet-text').focus();
+      $('#tweet-text').focus(); //automatically place the cursor in the text area when the form slides down, improving the user experience.
     } else {
       $('#new-tweet-form').slideUp("slow");
     }
