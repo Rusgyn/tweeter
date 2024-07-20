@@ -34,7 +34,7 @@
   </head>
 
   <body>
-    <!-- Top nav bar (fixed) -->
+    <!-- Top nav bar -->
     <nav>
       <span class = "logo">tweeter</span>
       <div class = "nav-new-tweet">
@@ -45,38 +45,44 @@
       </div>
     </nav>
 
-    <header>
-      <div>
-        <img src="/images/profile-hex.png">
-      </div>
-      <br>
-      <div>
-        <h2>Rusgyn Magsanay</h2>
-      </div>
-    </header>
+    <section class="body-elements"> <!-- Add section for styling purpose -->
 
-    <!-- Page-specific (main) content here -->
-    <main class="container">
-      <!-- Form page -->
-      <section class="new-tweet">
-        <!-- Tweet validation UI error -->
-        <p id="validation-error"></p>
-        <!-- New tweet -->
-        <form id="new-tweet-form" action="/tweets" method="POST">
-          <label for="tweet-text">What are you humming about?</label>
-          <textarea type="text" name="text" id="tweet-text"></textarea>
-          <footer class="new-tweet-footer">
-            <button class="tweet-btn" type="submit">Tweet</button>
-            <output name="counter" class="counter" for="tweet-text">140</output>
-          </footer>
-        </form>
-      </section>
-      
-      <!-- tweet container -->
-      <section id="tweets-container"></section>
+      <header class="profile-header">
+        <div class="profile-user-image">
+          <img src="/images/profile-hex.png">
+        </div>
+        <br>
+        <div>
+          <h2>Rusgyn M</h2>
+        </div>
+      </header>
 
-    </main>
+      <!-- Page-specific (main) content here -->
+      <main class="container">
+
+        <!-- Form page -->
+        <section class="new-tweet">
+          <!-- Tweet validation UI error -->
+          <p id="validation-error"></p>
+          <!-- New tweet -->
+          <form id="new-tweet-form" action="/tweets" method="POST">
+            <label for="tweet-text">What are you humming about?</label>
+            <textarea type="text" name="text" id="tweet-text"></textarea>
+            <footer class="new-tweet-footer">
+              <button class="tweet-btn" type="submit">Tweet</button>
+              <output name="counter" class="counter" for="tweet-text">140</output>
+            </footer>
+          </form>
+        </section>
+        
+        <!-- Tweet Container -->
+        <section id="tweets-container"></section>
+      </main>
+    
+    </section>
+
     <!-- bottom button, for scrolling the page -->
     <span id="scroll-btn"><i class="fa-solid fa-circle-up fa-bounce fa-3x"></i></span>
+
   </body>
 </html>
