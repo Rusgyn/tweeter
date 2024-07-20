@@ -9,16 +9,16 @@ $(document).ready(() => {
   // Helper Function: UI scrolling the page.
   const pageScrolling = function() {
     let currentPosition = $(window).scrollTop();
-    if(currentPosition > initialPosition) {
+    if (currentPosition > initialPosition) {
       //Case: scrolling down
       $('#scroll-btn').show();
       $('nav').addClass('navPosition');
-      $('.nav-new-tweet, #new-tweet-form').hide();
+      $('#validation-error, .nav-new-tweet, #new-tweet-form').hide();
 
       //Grab the Bottom button and facilitate click event.
       $('#scroll-btn').on('click', function() {
         window.scrollTo(0,0); //Jump to the top of the page
-        $( 'nav' ).removeClass('navPosition');
+        $('nav').removeClass('navPosition');
         $('#new-tweet-form').slideDown("slow");
         $('#tweet-text').focus(); //automatically place the cursor in the text area when the form slides down, improving the user experience.
         $('#scroll-btn').hide();
@@ -54,7 +54,7 @@ $(document).ready(() => {
 
   const createTweetElement = function(tweet) {
     //Function that prevents Cross-Site Scripting (XSS) attach with Escaping. Converting insecure text into a safe "encoded" representation.
-    const escape = function (str) {
+    const escape = function(str) {
       let div = document.createElement("div");
       div.appendChild(document.createTextNode(str));
       return div.innerHTML;
@@ -64,7 +64,7 @@ $(document).ready(() => {
 
     let $tweet = $(`
       <article>
-        <header>
+        <header class="tweet-container-header">
           <div class="tweet-uname-avatar">
             <img src="${tweet.user.avatars}"> &nbsp &nbsp
             ${tweet.user.name} 
@@ -108,7 +108,7 @@ $(document).ready(() => {
     if (tweetCondition) {
       $('#validation-error').text(tweetCondition);
       //Displaying the error with effects and warning icons.
-      $('#validation-error').prepend('<i class="fa-solid fa-triangle-exclamation"></i> ').append(' <i class="fa-solid fa-triangle-exclamation"></i>').slideDown( 2000 , function () {
+      $('#validation-error').prepend('<i class="fa-solid fa-triangle-exclamation"></i> ').append(' <i class="fa-solid fa-triangle-exclamation"></i>').slideDown(2000 , function() {
         $('#validation-error').delay(2000).hide(2000);
       });
 
@@ -133,14 +133,14 @@ $(document).ready(() => {
           $('#validation-error').show();
           $('#validation-error').text('Internal Server Error. Failed to save tweet');
           //Displaying the error with effects and warning icons.
-          $('#validation-error').prepend('<i class="fa-solid fa-triangle-exclamation"></i> ').append(' <i class="fa-solid fa-triangle-exclamation"></i>').slideDown( 2000 , function () {
+          $('#validation-error').prepend('<i class="fa-solid fa-triangle-exclamation"></i> ').append(' <i class="fa-solid fa-triangle-exclamation"></i>').slideDown(2000 , function() {
             $('#validation-error').delay(2000).hide(2000);
           });
         }
       });
 
       $('#tweet-text').val('');// clearing the form
-      $('.counter').text(140)// reset to our default max number of text character
+      $('.counter').text(140);// reset to our default max number of text character
       $('#new-tweet-form').hide("slow"); // Hide the form, until its called
     }
   });
@@ -171,7 +171,7 @@ $(document).ready(() => {
         $('#validation-error').show();
         $('#validation-error').text('Internal Server Error. Failed to load tweets');
         //Displaying the error with effects and warning icons.
-        $('#validation-error').prepend('<i class="fa-solid fa-triangle-exclamation"></i> ').append(' <i class="fa-solid fa-triangle-exclamation"></i>').slideDown( 2000 , function () {
+        $('#validation-error').prepend('<i class="fa-solid fa-triangle-exclamation"></i> ').append(' <i class="fa-solid fa-triangle-exclamation"></i>').slideDown(2000 , function() {
           $('#validation-error').delay(2000).hide(2000);
         });
       }
@@ -182,6 +182,6 @@ $(document).ready(() => {
   loadTweets();
 
   //Events that remain hidden until its called.
-  $('#validation-error, #new-tweet-form, #scroll-btn').hide(); 
+  $('#validation-error, #new-tweet-form, #scroll-btn').hide();
 
 });
