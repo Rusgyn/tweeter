@@ -16,6 +16,13 @@ article:hover {
   box-shadow: 12px 12px 2px 1px rgba(0, 0, 255, .2);
 }
 
+.tweet-container-header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: 0.5em auto;
+}
+
 /* Header. User avatar, Name, and Username  */
 article header {
   background-image: none;

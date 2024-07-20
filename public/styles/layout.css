@@ -18,7 +18,6 @@ body {
   color: #545149;
   background-color: #f4f1ec;
   font-size: 24px;
-
   font-family: "Source Sans 3", Arial, sans-serif;
   padding-top: 120px;
 }
@@ -27,12 +26,30 @@ body {
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
 
- /* main section */
- .container {
+/* main section */
+.container {
   display: flex;
   flex-direction: column;
   justify-content: center;
   background-color: inherit;
   width: 90%;
   margin: 0 auto;
- }
+}
+
+/* Desktop breakpoint Styling */
+@media only screen and (min-width: 1024px) {
+
+  .body-elements {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .container {
+    width: 55%;
+    justify-items: flex-end;
+    background-color: inherit;
+    /* top-right-bottom-left */
+    margin: 1rem 3rem 0rem 3rem;
+  }
+}
+

@@ -1,74 +1,107 @@
 /* Navigator header */
 
-nav {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  height: 120px;
-  padding-left: 1.5em;
-  padding-right: 1.5em;
-  background-color: #4056A1;
-  color: #FFFFFF;
-  /* makes nav bar fixed */
-  position: fixed;
-  top: 0px;
-  width: 100%
+/* All device but but Tablet and desktop Styles */
+@media only screen and (min-width: 0px) {
+  nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    height: 120px;
+    padding-left: 1.5em;
+    padding-right: 1.5em;
+    background-color: #4056A1;
+    color: #FFFFFF;
+    /* makes nav bar fixed */
+    position: fixed;
+    top: 0px;
+    width: 100%
+  }
+
+  /* dynamic nav styling for scroll button */
+  .scroll-logo {
+    position: sticky;
+  }
+
+  .navPosition {
+    background-color: transparent;
+    color: #FFFFFF;
+    width: 100%
+  }
+
+  /* Tweeter Logo within navigator */
+  .logo { 
+    font-family: Bungee;
+  }
+
+  /* Write New Tweet, and double arrow icon */
+  .nav-new-tweet {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    font-family: inherit;
+  }
+
+  .write-new-tweet {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    border: none;
+    background-color: inherit;
+    color: inherit;
+  }
+
+  .write-new-tweet:hover {
+    box-shadow: 0 0 15px #9484fb;
+  }
+
+  .fa-angles-down {
+    color: red;
+  }
+
+  /* Bottom button. Scrolling */
+  .fa-circle-up {
+    color: red;
+  }
+
+  .fa-circle-up:hover {
+    color: #39A2AE;
+  }
+
+  #scroll-btn {
+    position: sticky;
+    bottom: 8%;
+    left: 93%
+  }
 }
 
-/* dynamic nav styling for scroll button */
-.scroll-logo {
-  position: sticky;
+/* Tablet Styles */
+@media only screen and (min-width: 768px) {
+  nav {
+    background-color: goldenrod;/*#4056A1 as its default background colour, use in Desktop style view min-width 1024px*/
+    background-image: url("asfalt-dark-background.png");
+  }
+
+  .navPosition {
+    background-color: transparent;
+    background-image: none;
+    color: #FFFFFF;
+    width: 100%
+  }
 }
 
-.navPosition {
-  background-color: transparent;
-  color: #FFFFFF;
-  width: 100%
-}
+/* Desktop breakpoint Styling */
+@media only screen and (min-width: 1024px) {
+  nav {
+    background-color: #4056A1; 
+    background-image: none;
+  }
 
-/* Tweeter Logo within navigator */
-.logo { 
-  font-family: Bungee;
-}
-
-/* Write New Tweet, and double arrow icon */
-.nav-new-tweet {
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  align-items: center;
-  font-family: inherit;
-}
-
-.write-new-tweet {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  border: none;
-  background-color: inherit;
-  color: inherit;
-}
-
-.write-new-tweet:hover {
-  box-shadow: 0 0 15px #9484fb;
-}
-
-.fa-angles-down {
-  color: red;
-}
-
-/* Bottom button. Scrolling */
-.fa-circle-up {
-  color: red;
-}
-
-.fa-circle-up:hover {
-  color: #39A2AE;
-}
-
-#scroll-btn {
-position: sticky;
-bottom: 8%;
-left: 93%
+  /* dynamic nav styling for scroll button */
+  #scroll-btn {
+    position: sticky;
+    bottom: 5%;
+    left: 96%
+  }
 }
