@@ -1,70 +1,71 @@
 /* Form page Styling
 To compose Tweet */
+@media only screen and (min-width: 0px) {
+  .new-tweet {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    margin: 1.5em 0em 2em 0em;
+  }
 
-.new-tweet {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  width: 100%;
-  margin: 1.5em 0em 2em 0em;
-}
+  #validation-error {
+    padding: 20px;
+    margin: 0em 0em 1em 0;
+    text-align: center;
+    background-color: #e6afaf;
+    background-image: url("https://www.transparenttextures.com/patterns/elastoplast.png");
+    border: solid 1px red;
+    display: none;
+    color: rgb(180, 1, 1);
+  }
 
-#validation-error {
-  padding: 20px;
-  margin: 0em 0em 1em 0;
-  text-align: center;
-  background-color: #e6afaf;
-  background-image: url("https://www.transparenttextures.com/patterns/elastoplast.png");
-  border: solid 1px red;
-  display: none;
-  color: rgb(180, 1, 1);
-}
+  #tweet-text {
+    width: 100%;
+    margin-top: 0.25em;
+    resize: none;
+    border-style: none;
+    border-bottom: 5px solid black;
+    border-bottom-style: outset;
+    background-color: #f4f1ec;
+    padding: 0.50em;
+  }
 
-#tweet-text {
-  width: 100%;
-  margin-top: 0.25em;
-  resize: none;
-  border-style: none;
-  border-bottom: 5px solid black;
-  border-bottom-style: outset;
-  background-color: #f4f1ec;
-  padding: 0.50em;
-}
+  #tweet-text:focus { 
+    outline: none !important;
+    box-shadow: 0 0 15px #9484fb;
+  }
 
-#tweet-text:focus { 
-  outline: none !important;
-  box-shadow: 0 0 15px #9484fb;
-}
+  .new-tweet-footer {
+    display: flex;
+    justify-content: space-between;
+    font-family: Bungee;
+    margin-top: 0.5em;
+  }
 
-.new-tweet-footer {
-  display: flex;
-  justify-content: space-between;
-  font-family: Bungee;
-  margin-top: 0.5em;
-}
+  .tweet-btn {
+    background-color: #4056A1;
+    color: #FFFFFF;
+    border: none;
+    padding: 0.30em;
+  }
 
-.tweet-btn {
-  background-color: #4056A1;
-  color: #FFFFFF;
-  border: none;
-  padding: 0.30em;
-}
+  .tweet-btn:hover {
+    background-color: darkslateblue;
+    color: yellow;
+  }
+  .tweet-btn:focus {
+    box-shadow: 0 0 15px #9484fb;
+  }
 
-.tweet-btn:hover {
-  background-color: darkslateblue;
-  color: yellow;
-}
-.tweet-btn:focus {
-  box-shadow: 0 0 15px #9484fb;
-}
+  .counter {
+    color: black;
+    padding: 0.30em;
+  }
 
-.counter {
-  color: black;
-  padding: 0.30em;
-}
-
-.invalid {
-  color: red;
+  .invalid {
+    color: red;
+  }
 }
 
 /* Desktop breakpoint Styling */
