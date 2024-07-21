@@ -60,7 +60,7 @@ $(document).ready(() => {
       return div.innerHTML;
     };
 
-    const safeHTML = `<p>${escape(tweet.content.text)}</p>`;
+    const safeHTML = `<p>${escape((tweet.content.text).trim())}</p>`;
 
     let $tweet = $(`
       <article>
@@ -102,7 +102,7 @@ $(document).ready(() => {
     event.preventDefault();
     
     const $textArea = $('#tweet-text');
-    const tweetText = ($textArea.val()).trim(); //remove any leading or trailing white spaces
+    const tweetText = $textArea.val();
     const tweetCondition = validateTweet(tweetText);
 
     if (tweetCondition) {
@@ -142,16 +142,18 @@ $(document).ready(() => {
       $('#tweet-text').val('');// clearing the form
       $('.counter').text(140);// reset to our default max number of text character
       $('#new-tweet-form').hide("slow"); // Hide the form, until its called
+      $('.counter').removeClass('invalid'); //class that turns red >140 char
     }
   });
 
   //Helper Function: Validate the new tweet
   const validateTweet = function(tweetText) {
-    if (tweetText.length === 0) {
+    let trimTweet = tweetText.trim();//remove any leading or trailing white spaces
+    if (trimTweet.length === 0) {
       return "Your tweet is empty";
     }
 
-    if (tweetText.length > 140) {
+    if (trimTweet.length > 140) {
       return "Your tweet is too long, limit to 140 characters only";
     }
   };
