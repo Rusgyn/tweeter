@@ -18,11 +18,11 @@ $(document).ready(() => {
       //Grab the Bottom button and facilitate click event.
       $('#scroll-btn').on('click', function() {
         window.scrollTo(0,0); //Jump to the top of the page
-        $('nav').removeClass('navPosition');
-        $('#new-tweet-form').slideDown("slow");
+        $(this).closest('body').find('#new-tweet-form').slideDown("slow");
         $('#tweet-text').focus(); //automatically place the cursor in the text area when the form slides down, improving the user experience.
-        $('#scroll-btn').hide();
+        $(this).hide();
       });
+
     } else {
       //Case: scrolling down
       $('#scroll-btn').hide();
